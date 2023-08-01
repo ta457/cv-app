@@ -1,0 +1,4 @@
+.edu-inp > div {
+  display: flex;
+  gap: 10px;
+}

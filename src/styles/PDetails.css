@@ -1,0 +1,32 @@
+/* Resume header (personal info section) */
+
+.p-details {
+  padding: 30px;
+  background-color: var(--default-theme);
+  height: fit-content;
+  width: 100%;
+  color: #ffffff;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+
+  text-align: center;
+}
+
+.p-details > div {
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.p-details > div > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.p-details > div img {
+  width: 20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
