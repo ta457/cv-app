@@ -1,7 +1,6 @@
 /* Resume header (personal info section) */
 
 .p-details {
-  padding: 30px;
   background-color: var(--default-theme);
   height: fit-content;
   width: 100%;

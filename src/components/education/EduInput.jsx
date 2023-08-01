@@ -3,31 +3,99 @@ import '../../styles/Edu.css'
 import { TextInp } from '../TextInp'
 import { Button } from '../Button'
 import { useState } from 'react'
+import { InputHead } from '../InputHead'
 
 
-function EduInput() {
+function EduInput({ addSchool, schools, deleteSchool }) {
+  const [school, setSchool] = useState('');
+  const [degree, setDegree] = useState('');
+  const [start, setStart] = useState('');
+  const [end, setEnd] = useState('');
+
+  const handleSchoolChange = (e) => {
+    setSchool(e.target.value);
+  }
+  const handleDegreeChange = (e) => {
+    setDegree(e.target.value);
+  }
+  const handleStartChange = (e) => {
+    setStart(e.target.value);
+  }
+  const handleEndChange = (e) => {
+    setEnd(e.target.value);
+  }
+
+  const handleButtonClick = () => {
+    if(school.trim() !== '' && degree.trim() !== '' 
+      && start.trim() !== '' && end.trim() !== '') {
+      addSchool({ name: school, deg: degree, startD: start, endD: end });
+      setSchool('');
+      setDegree('');
+      setStart('');
+      setEnd('');
+    }
+  }
+
+  const handleMenuToggle = () => {
+    const content = document.querySelector('.edu-inp div');
+    const icon = document.querySelector('.edu-inp h1 > img')
+    if(content.classList.contains('hide')) {
+      content.classList.remove('hide');
+      icon.src = '/src/assets/chevron-up.svg';
+    } else {
+      content.classList.add('hide');
+      icon.src = '/src/assets/chevron-down.svg';
+    }
+  }
 
   return (
     <div className='card edu-inp'>
-      <h1>Education</h1>
-      <TextInp 
-        label="School"
-        placeholder="Enter school / university"
-      />
-      <TextInp 
-        label="Degree"
-        placeholder="Enter degree / field of study"
-      />
+      <InputHead text="Education" onClick={handleMenuToggle} />
       <div>
+        <ul>
+          {schools?.map((item, index) => (
+            <li key={index}>
+              {item.name}
+              <Button 
+                text="Remove"
+                className="normalBtn"
+                onClick={() => deleteSchool(index)}
+              />
+            </li>
+          ))}
+        </ul>
         <TextInp 
-          type="date"
+          type="text"
+          value={school}
+          onChange={handleSchoolChange}
+          label="School"
+          placeholder="Enter school / university"
+        />
+        <TextInp 
+          type="text"
+          value={degree}
+          onChange={handleDegreeChange}
+          label="Degree"
+          placeholder="Enter degree / field of study"
+        />
+        <TextInp 
+          type="text"
+          value={start}
+          onChange={handleStartChange}
           label="Study from"
           placeholder="Enter start date"
         />
         <TextInp 
-          type="date"
+          type="text"
+          value={end}
+          onChange={handleEndChange}
           label="To"
           placeholder="Enter end date"
+        />
+        <Button
+          text="Add"
+          className="blueBtn"
+          onClick={handleButtonClick}
         />
       </div>
     </div>

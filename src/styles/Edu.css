@@ -1,4 +1,31 @@
-.edu-inp > div {
+.edu-inp > div > div {
   display: flex;
   gap: 10px;
+}
+
+.school-item {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  padding-bottom: 10px;
+  grid-gap: 5px 0;
+}
+
+.school-item > :nth-child(2) {
+  font-weight: bold;
+}
+
+.school-item > :nth-child(3) {
+  grid-column-start: 2;
+}
+
+.exp-inp ul > li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--background-darker);
+}
+
+.exp-inp ul > li button {
+  padding: 5px;
 }

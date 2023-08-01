@@ -1,7 +1,7 @@
 #root {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 30px;
+  grid-template-columns: 2fr 4fr;
+  gap: 20px;
 }
 
 :root {
@@ -15,13 +15,30 @@
 
 body {
   background-color: var(--background-color);
-  padding: 50px 15vw;
+  padding: 50px 10vw;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    padding: 50px 20px;
+  }
 }
 
 .edit-box {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.resume-box {
+  width: 100%;
+}
+
+.resume-box > :first-child {
+  padding: 40px;
+}
+.resume-box > :last-child {
+  padding: 20px 40px;
 }
 
 .resume-box {
@@ -38,7 +55,7 @@ body {
   color: var(--default-theme);
   padding: 5px 0;
   text-align: center;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .card {
@@ -51,10 +68,13 @@ body {
 }
 
 .card h1 {
-  padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.card > :nth-child(2) {
+  margin-top: 10px;
 }
 
 .card img {
@@ -69,10 +89,10 @@ body {
   width: 100%;
 }
 
-.card ul {
-  margin-left: 20px;
-}
-
 .card ul > li {
   list-style-type: disc;
+}
+
+.hide {
+  display: none;
 }

@@ -1,0 +1,36 @@
+.exp-inp > div > div {
+  display: flex;
+  gap: 10px;
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  padding-bottom: 10px;
+  grid-gap: 5px 0;
+}
+
+.exp-item > :nth-child(2) {
+  font-weight: bold;
+}
+
+.exp-item > :nth-child(3) {
+  font-style: italic;
+  grid-column-start: 2;
+}
+
+.exp-item > :nth-child(4) {
+  grid-column-start: 2;
+}
+
+.edu-inp ul > li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--background-darker);
+}
+
+.edu-inp ul > li button {
+  padding: 5px;
+}
