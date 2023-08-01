@@ -1,4 +1,4 @@
-import arrowUp from '../assets/chevron-up.svg'
+import arrowUp from '../assets/dots-vertical.svg'
 
 //eslint-disable-next-line react/prop-types
 function InputHead({text, onClick}) {

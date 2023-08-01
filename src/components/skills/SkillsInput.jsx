@@ -21,13 +21,10 @@ function SkillsInput({ addSkill, skills, deleteSkill }) {
 
   const handleMenuToggle = () => {
     const content = document.querySelector('.skills-inp div');
-    const icon = document.querySelector('.skills-inp h1 > img')
     if(content.classList.contains('hide')) {
       content.classList.remove('hide');
-      icon.src = '/src/assets/chevron-up.svg';
     } else {
       content.classList.add('hide');
-      icon.src = '/src/assets/chevron-down.svg';
     }
   }
 

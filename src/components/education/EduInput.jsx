@@ -38,13 +38,10 @@ function EduInput({ addSchool, schools, deleteSchool }) {
 
   const handleMenuToggle = () => {
     const content = document.querySelector('.edu-inp div');
-    const icon = document.querySelector('.edu-inp h1 > img')
     if(content.classList.contains('hide')) {
       content.classList.remove('hide');
-      icon.src = '/src/assets/chevron-up.svg';
     } else {
       content.classList.add('hide');
-      icon.src = '/src/assets/chevron-down.svg';
     }
   }
 

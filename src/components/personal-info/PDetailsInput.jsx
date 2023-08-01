@@ -13,13 +13,10 @@ function PDetailsInput({ onChange }) {
 
   const handleMenuToggle = () => {
     const content = document.querySelector('.p-details-inp div');
-    const icon = document.querySelector('.p-details-inp h1 > img')
     if(content.classList.contains('hide')) {
       content.classList.remove('hide');
-      icon.src = '/src/assets/chevron-up.svg';
     } else {
       content.classList.add('hide');
-      icon.src = '/src/assets/chevron-down.svg';
     }
   }
 
