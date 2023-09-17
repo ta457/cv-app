@@ -1,4 +1,4 @@
 # cv-app
 CV builder app made with React.
 
-[Live Page](https://mokapotsv-cv-maker.netlify.app/)
+[Live Page](https://mokapotsv-cvmaker.netlify.app/)
